@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우리동네스마트건강지도 서비스 소개</title>
+  <style>
+    :root {
+      --ink: #12263a;
+      --muted: #4f5d75;
+      --brand: #0b7285;
+      --line: #d9e2ec;
+      --bg: #f8fbfd;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(160deg, #ffffff 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 18mm 16mm;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      color: var(--brand);
+      letter-spacing: -0.3px;
+    }
+    .subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    section {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+    h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #0f4c5c;
+    }
+    p, li { font-size: 13.5px; }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    .persona-title { font-weight: 700; margin-top: 8px; }
+    .footer {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: right;
+    }
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>우리동네스마트건강지도 서비스 요약</h1>
+    <p class="subtitle">프로젝트 기반 발표 자료 (요청 순서 1~7 반영)</p>
+
+    <section>
+      <h2>1. 서비스 명</h2>
+      <p><strong>우리동네스마트건강지도</strong></p>
+      <p>지역 건강위험 정보와 증상 기반 병원 추천을 한 번에 제공하는 생활 밀착형 헬스케어 지도 서비스</p>
+    </section>
+
+    <section>
+      <h2>2. 타겟(페르소나)</h2>
+      <p class="persona-title">페르소나 A: 30대 직장인(성인)</p>
+      <ul>
+        <li>감기·몸살 등 증상 발생 시 빠른 병원 탐색 필요</li>
+        <li>대기시간이 긴 병원은 피하고 싶음</li>
+        <li>출퇴근 동선 내 가까운 병원 선호</li>
+      </ul>
+      <p class="persona-title">페르소나 B: 40대 보호자(소아 동반)</p>
+      <ul>
+        <li>아이 증상에 맞는 진료과를 빠르게 파악하고 싶음</li>
+        <li>야간/주말 혼잡도가 낮은 병원 탐색 필요</li>
+      </ul>
+      <p class="persona-title">페르소나 C: 60대 이상 사용자(고령)</p>
+      <ul>
+        <li>복잡한 탐색 없이 간단 입력으로 추천받고 싶음</li>
+        <li>이동 가능 거리 내 병원 우선 확인 필요</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. 특징</h2>
+      <ul>
+        <li>지역 단위 건강위험수치 제공(시/군/구, 읍/면/동)</li>
+        <li>증상 입력 시 추천 진료과 자동 반영</li>
+        <li>병원 추천 버튼 한 번으로 주변 병원 후보 조회</li>
+        <li>거리·예상 대기시간·진료과를 함께 고려한 추천</li>
+        <li>실시간 조회 실패 시 지역 실병원 데이터 폴백</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. 핵심기능</h2>
+      <ul>
+        <li>지역 건강위험수치 및 위험등급 표시</li>
+        <li>건강예방 조언 자동 제공</li>
+        <li>병원 대기시간 확인(추정/수집 정보 기반)</li>
+        <li>증상/상황 기반 병원 추천(최대 5곳)</li>
+        <li>감염 위험 알림 토글</li>
+        <li>원격 대기 등록(데모 흐름)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. 편리한 점</h2>
+      <ul>
+        <li>진료과를 직접 고르지 않아도 증상만 입력하면 자동 추천</li>
+        <li>이동 가능 거리 설정으로 현실적인 병원 후보만 제시</li>
+        <li>한 화면에서 정보 조회와 추천 비교 가능</li>
+        <li>거리/대기시간/진료과를 빠르게 비교 가능</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. 장점</h2>
+      <ul>
+        <li>사용자의 병원 선택 의사결정 시간 단축</li>
+        <li>의료 접근성 향상(가까운 병원 우선 탐색)</li>
+        <li>외부 API 연동 + 폴백 구조로 서비스 안정성 확보</li>
+        <li>MVP 단계에서도 실제 배포 및 즉시 사용 가능</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. 단점</h2>
+      <ul>
+        <li>일부 병원 데이터/대기정보는 추정치 기반</li>
+        <li>지역별 실병원 데이터 커버리지가 불균등</li>
+        <li>외부 API 응답 및 쿼터 상태에 따라 정확도 변동 가능</li>
+        <li>개인 건강기록 연동/예약/결제 기능은 미포함</li>
+      </ul>
+    </section>
+
+    <p class="footer">우리동네스마트건강지도 · PDF 생성본</p>
+  </main>
+</body>
+</html>

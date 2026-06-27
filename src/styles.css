@@ -1,0 +1,439 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+:root {
+  --ink: #132a3a;
+  --soft-ink: #4a6070;
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --line: #d8e4f0;
+  --accent: #ff6b3d;
+  --accent-2: #2b7fff;
+  --good: #1f9d6a;
+  --mid: #f2a93b;
+  --bad: #e14b4b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 0%, #fff2e8 0, transparent 38%),
+    radial-gradient(circle at 90% 20%, #e8f1ff 0, transparent 44%),
+    var(--bg);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 46px;
+  display: grid;
+  gap: 16px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #0f3855, #1b557d);
+  color: #f5f8ff;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 16px 34px rgba(15, 56, 85, 0.2);
+  animation: rise 0.6s ease;
+}
+
+.hero h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.hero p {
+  margin: 0;
+  color: #d9e8ff;
+}
+
+.tag {
+  margin: 0;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: #9ed0ff;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(19, 42, 58, 0.06);
+}
+
+.panel h2 {
+  margin: 0 0 4px;
+  font-size: 1.08rem;
+}
+
+.muted {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  color: var(--soft-ink);
+}
+
+.selector-panel {
+  display: grid;
+  gap: 8px;
+}
+
+.selector-grid {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.selector-grid > div {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.selector-panel label {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.selector-grid select {
+  width: 100%;
+}
+
+select {
+  width: min(280px, 100%);
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 0 12px;
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.bar {
+  background: #eef3fb;
+  border-radius: 99px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.bar > div {
+  height: 100%;
+  background: linear-gradient(90deg, #ff8a5b, #ff6b3d);
+}
+
+.bar.symptom > div {
+  background: linear-gradient(90deg, #63a0ff, #2b7fff);
+}
+
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.map-chip {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  display: grid;
+  gap: 2px;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.map-chip:hover {
+  transform: translateY(-2px);
+}
+
+.map-chip.active {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(43, 127, 255, 0.14);
+}
+
+.map-chip[data-grade='낮음'] small {
+  color: var(--good);
+}
+
+.map-chip[data-grade='보통'] small {
+  color: var(--mid);
+}
+
+.map-chip[data-grade='높음'] small {
+  color: var(--bad);
+}
+
+.risk-panel {
+  display: grid;
+  place-items: center;
+}
+
+.location {
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.gauge {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 8px 0 14px;
+}
+
+.gauge-inner {
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+}
+
+.gauge-inner strong {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.gauge-inner span {
+  font-size: 0.95rem;
+  color: var(--soft-ink);
+}
+
+.advice-list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.info-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  background: #fbfdff;
+  display: grid;
+  gap: 6px;
+}
+
+.info-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--soft-ink);
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 4px;
+  border-radius: 99px;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge.여유 {
+  color: #0a7a4f;
+  background: #e8f9f0;
+}
+
+.badge.보통 {
+  color: #8a5a00;
+  background: #fff4de;
+}
+
+.badge.혼잡 {
+  color: #9f1b1b;
+  background: #ffe5e5;
+}
+
+.recommend-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.recommend-form label,
+.remote-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+}
+
+input {
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 0 12px;
+}
+
+.recommend-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.stock-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.stock-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+}
+
+.low-stock {
+  color: #b91f1f;
+}
+
+.alert-toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.toggle {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.toggle.active {
+  border-color: var(--accent-2);
+  background: #eef5ff;
+}
+
+.alert-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.alert-list p {
+  margin: 4px 0 0;
+  color: var(--soft-ink);
+}
+
+.remote-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cta {
+  grid-column: 1 / -1;
+  height: 42px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2b7fff, #1b66de);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ticket {
+  margin-top: 12px;
+  border: 1px solid #bfddff;
+  border-radius: 12px;
+  background: #f3f8ff;
+  padding: 12px;
+}
+
+.ticket h3 {
+  margin: 0 0 6px;
+}
+
+.ticket p {
+  margin: 2px 0;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 820px) {
+  .selector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .map-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recommend-form,
+  .remote-form {
+    grid-template-columns: 1fr;
+  }
+}
